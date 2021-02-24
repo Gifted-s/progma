@@ -9,9 +9,10 @@
     "dev": "nodemon --exec babel-node ./src/index.js",
     "test": "jest __test__",
     "clean": "rimraf dist",
-    "start": "npm run clean && npm run build  && cd dist && node ./src/index.js"
+    "setup-production-environment":  "npm run clean && npm run build  && cd dist",
+    "start": "node ./src/index"
   },
-  "author": "",
+  "author": "Adewumi Sunkanmi",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.12.17",
