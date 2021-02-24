@@ -4,4 +4,4 @@ COPY package.json /darey-project-management-service
 RUN  npm install
 COPY . /darey-project-management-service
 EXPOSE 3000
-CMD ["node", "./src/index.js"]
+CMD ["npm", "run", "build"]
