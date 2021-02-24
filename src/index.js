@@ -13,6 +13,11 @@ app.use(express.urlencoded({
     extended: true
 }))
 app.get('/', new HandleCallback(controllers.oAuthController))
+app.get('/template', (req,res)=>{
+   res.send(`
+   <h1>Server is listening :) ${process.env.PORT}</h1>
+   `)
+})
 app.post(ROUTES.ADD_PROJECT_PATH, new HandleCallback(controllers.submitProjectController))
 app.post(ROUTES.UPDATE_PROJECT_PATH,new HandleCallback(controllers.updateProjectController))
 app.get(ROUTES.GET_PROJECTS_PATH, new HandleCallback(controllers.getProjectsController))
