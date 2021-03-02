@@ -1,8 +1,10 @@
 
 import  axios from 'axios'
 import  createAuthPage from '../modules/create_auth_page/create_auth_page'
+import createTokenRequestBody from '../config/config'
 export default class AuthService {
     async oauthService(authorization_code) {
+        
         if (authorization_code) {
             try {
                 const resp = await axios({
@@ -15,6 +17,7 @@ export default class AuthService {
                 })
 
                 const { name, email, timezone, avatar_url } = user.data.resource
+               
                 return createAuthPage(avatar_url, name, email, timezone, organization, resp.data.access_token)
 
 

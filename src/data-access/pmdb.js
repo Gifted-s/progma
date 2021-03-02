@@ -1,5 +1,5 @@
 
-const mongodb = require('mongodb')
+import  mongodb from 'mongodb'
 
 
 export default class PmDB {
@@ -38,7 +38,7 @@ export default class PmDB {
      async insertProject(project) {
         const db = await this.createConnection()
 
-        let exist = await findByEmailAndProject(project.email, project.project)
+        let exist = await this.findByEmailAndProject(project.email, project.project)
         if (exist.length > 0) {
             return { status: 'failed', message: 'User have already submitted this project' }
         }

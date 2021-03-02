@@ -1,23 +1,18 @@
 import dotenv from 'dotenv'
-// testing
 dotenv.config()
 import express from 'express'
 import cors from 'cors'
 import ROUTES from './route_paths/routes'
 import HandleCallback from './modules/express-callback'
 import controllers from './controller'
+import AuthCallback from './modules/auth-callback/auth_callback'
 let app = express()
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({
     extended: true
 }))
-app.get('/', new HandleCallback(controllers.oAuthController))
-app.get('/template', (req,res)=>{
-   res.send(`
-   <h1>Server is listening :) ${process.env.PORT}</h1>
-   `)
-})
+app.get('/', new AuthCallback(controllers.oAuthController))
 app.post(ROUTES.ADD_PROJECT_PATH, new HandleCallback(controllers.submitProjectController))
 app.post(ROUTES.UPDATE_PROJECT_PATH,new HandleCallback(controllers.updateProjectController))
 app.get(ROUTES.GET_PROJECTS_PATH, new HandleCallback(controllers.getProjectsController))

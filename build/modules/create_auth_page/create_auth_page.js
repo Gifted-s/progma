@@ -1,5 +1,12 @@
- export default function createAuthPage(avatar_url, name, email, timezone, organization, access_token){
-   console.log('creatig auth oage') 
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = createAuthPage;
+
+function createAuthPage(avatar_url, name, email, timezone, organization, access_token) {
+  console.log('creatig auth oage');
   return ` <!doctype html>
     <html lang="en">
       <head>
@@ -63,7 +70,5 @@
               margin-bottom: 30px;
           }
       </style>
-    </html>`
-
+    </html>`;
 }
-

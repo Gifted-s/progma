@@ -1,4 +1,4 @@
-const createTokenRequestBody = function (authorization_code){
+export default function createTokenRequestBody (authorization_code){
     return{
         'grant_type': 'authorization_code',
         'client_id': 'kquzN7LrU_tpbXtsRRCrKfmXw-EMwuQx2oOiNpu__mc',

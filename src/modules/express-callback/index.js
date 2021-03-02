@@ -22,7 +22,6 @@ export default class HandleCallback {
       }
       return this.controller(httpRequest)
         .then(httpResponse => {
-          console.log(httpResponse)
           if (httpResponse.headers) {
             res.set(httpResponse.headers)
           }

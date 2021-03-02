@@ -1,16 +1,22 @@
 import AuthService from './oauth'
-const ProjectSubmission = require('../entities/project_submission')
+import  ProjectSubmission from '../entities/project_submission'
 import ProjectName from '../entities/project_name'
 export default class Services extends AuthService {
  
     constructor(ProjectManegementDB) {
         super()
         this.pmDB =  ProjectManegementDB
+       
+
     }
 
+   
     async submitProject(projectBody) {
+        
         let project = new ProjectSubmission(projectBody)
+    
         const response = await this.pmDB.insertProject(project)
+
         return response
     }
 
