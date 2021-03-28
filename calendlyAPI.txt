@@ -1,0 +1,14 @@
+NAME	projectmanaga2384
+
+UID (CLIENT ID)	kquzN7LrU_tpbXtsRRCrKfmXw-EMwuQx2oOiNpu__mc
+
+Client Secret: xX7SjwqAyLq5ALrvyG5KFD1CDd7ldG30PCyVLS9DQIk
+
+REDIRECT URI	https://projectmanaga2384.herokuapp.com
+
+DEVELOPER EMAIL	dare@darey.io
+
+WEBHOOK SIGNING KEY	c8RA9Q6KsRft7UmBKeqsaFoap78bNFe6ktF5AbQruV4
+
+
+
